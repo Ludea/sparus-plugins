@@ -1,0 +1,15 @@
+[package]
+name = "tauri-plugin-updater"
+version = "0.0.0"
+authors = [ "You" ]
+description = ""
+edition = "2021"
+rust-version = "1.57"
+exclude = ["/examples", "/webview-dist", "/webview-src", "node_modules"]
+
+[dependencies]
+tauri = { version = "1.2.0" }
+serde = "1.0"
+thiserror = "1.0"
+sysinfo = "0.26.7"
+wgpu = "0.14.0"
