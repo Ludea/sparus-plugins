@@ -1,0 +1,19 @@
+{
+  "name": "tauri-plugin-notifications",
+  "version": "0.0.1",
+  "private": true,
+  "main": "Index.tsx",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.13",
+    "@tauri-apps/api": "^1.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "build": "tsc Index.tsx"
+  }
+}
