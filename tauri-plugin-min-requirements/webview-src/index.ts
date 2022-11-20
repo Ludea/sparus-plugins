@@ -9,6 +9,25 @@ interface CPU {
   canrungame: boolean;
 }
 const min_requirements = () => {
+invoke<number>("get_total_memory")
+      .then((value) => {
+        if (value < 8) {
+          setAlerts((previous) => [
+            ...previous,
+            {
+              severity: "warning",
+              message:
+                "The minimum to play is 8GB and you have only {memory.current}GB",
+            },
+          ]);
+        }
+      })
+      .catch((error) => {
+        setAlerts((previous) => [
+          ...previous,
+          { severity: "error", message: error },
+        ]);
+      });
 invoke<GPU>("list_available_gpu")
       .then((value) => {
         if (!value.canrungame) {
