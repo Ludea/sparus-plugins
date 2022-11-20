@@ -8,7 +8,7 @@ interface CPU {
   core: number;
   canrungame: boolean;
 }
-
+const min_requirements = () => {
 invoke<GPU>("list_available_gpu")
       .then((value) => {
         if (!value.canrungame) {
@@ -59,3 +59,6 @@ invoke<GPU>("list_available_gpu")
           { severity: "error", message: error },
         ]);
       });
+}
+
+export default min_requirements;
