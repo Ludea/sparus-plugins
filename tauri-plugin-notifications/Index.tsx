@@ -26,6 +26,17 @@ const Notifications = () => {
   }
 
   return (
+    {alerts.length > 0 ? (
+              <IconButton
+                color="primary"
+                aria-label="Alert"
+                size="small"
+                onClick={() => setAlertOpen(alerts.slice(0, 1))}
+              >
+                <Badge badgeContent={alerts.length} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
     <Stack>
       <TransitionGroup>
                   {alertOpen.map((alert: any, id: any) => (
