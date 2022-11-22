@@ -1,0 +1,13 @@
+{
+  "name": "tauri-plugin-changelog",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.tsx",
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.3",
+    "@mui/material": "^5.10.5",
+    "@tauri-apps/api": "^1.1.0"
+  }
+}
