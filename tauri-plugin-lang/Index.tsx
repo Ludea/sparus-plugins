@@ -9,6 +9,14 @@ import "i18n";
 
   const { i18n } = useTranslation();
 
+useEffect(()=> {
+    if (lang === "enUS") {
+      setFlagSelected("en-US");
+    } else {
+     setFlagSelected(lang.substring(0, 2) + "-" + lang.substring(3,5));
+       }
+  }, [lang]);
+
 const setlang = (code: string) => {
     switch (code) {
       case "en-US":
