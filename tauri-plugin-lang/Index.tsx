@@ -1,3 +1,6 @@
+import { ReactComponent as US } from "assets/flags/us.svg";
+import { ReactComponent as FR } from "assets/flags/fr.svg";
+
 const setlang = (code: string) => {
     switch (code) {
       case "en-US":
