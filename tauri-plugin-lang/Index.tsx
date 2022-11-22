@@ -1,6 +1,14 @@
 import { ReactComponent as US } from "assets/flags/us.svg";
 import { ReactComponent as FR } from "assets/flags/fr.svg";
 
+// i18n
+import { useTranslation, Trans } from "react-i18next";
+import "i18n";
+
+  const lang = useContext(LangContext);
+
+  const { i18n } = useTranslation();
+
 const setlang = (code: string) => {
     switch (code) {
       case "en-US":
