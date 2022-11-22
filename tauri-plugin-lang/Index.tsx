@@ -1,55 +1,37 @@
-import { useEffect, useRef } from "react";
-import TextField from "@mui/material/TextField";
+const setlang = (code: string) => {
+    switch (code) {
+      case "en-US":
+        i18n.changeLanguage("en-US");
+        break;
+      case "fr-FR":
+        i18n.changeLanguage("fr");
+        break;
+      default:
+        i18n.changeLanguage("en");
+    }
+    Save("lang", code);
+    setFlagSelected(code);
+  };
 
-// Tauri API
-import { getClient, HttpVerb } from "@tauri-apps/api/http";
-
-const httpMethod: HttpVerb = "GET";
-
-const changelog = () => {
-  const changelog = useRef("");
-
-  async function makeHttpRequest() {
-    const client = await getClient();
-
-    const options = {
-      url: "",
-      method: httpMethod,
-    };
-
-    client
-      .request(options)
-      .then((value) => {
-        if (value.status !== 200) {
-         // changelog.current.value = "There is a issue with server connection";
-        }// else changelog.current.value = value.data;
-      })
-      .catch((error) => {
-      //  changelog.current.value = error;
-      });
-  }
-
-  useEffect(() => {
-    makeHttpRequest();
-  });
-  return (
-      <TextField
-        autoFocus
-        margin="dense"
-        multiline
-        id="changelog"
-        rows={10}
-        inputRef={changelog}
-        InputProps={{
-          readOnly: true,
-          style: {
-            color: "white",
-          },
-        }}
-        sx={{
-          position: "fixed",
-          left: 100,
-        }}
-      />
-  );
-}
+          <Select
+            id="flags"
+            value={flagSelected}
+            label="Flags"
+            MenuProps={{
+              anchorOrigin: {
+                vertical: "top",
+                horizontal: "left",
+              },
+              transformOrigin: {
+                vertical: "bottom",
+                horizontal: "left",
+              },
+            }}
+          >
+            <MenuItem value="en-US" onClick={() => setlang("en-US")}>
+              <US width="30" height="30" />
+            </MenuItem>
+            <MenuItem value="fr-FR" onClick={() => setlang("fr-FR")}>
+              <FR width="30" height="30" />
+            </MenuItem>
+          </Select>
