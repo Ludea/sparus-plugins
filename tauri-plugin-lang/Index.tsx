@@ -5,6 +5,26 @@ import { ReactComponent as FR } from "assets/flags/fr.svg";
 import { useTranslation, Trans } from "react-i18next";
 import "i18n";
 
+//App.tsx
+
+    Load("lang")
+      .then((value: string) => {
+        switch (value) {
+          case "en-GB":
+            setLocale(value.replace("GB", "US") as SupportedLocales);
+            break;
+          case "fr-FR":
+            setLocale(value as SupportedLocales);
+            break;
+          default:
+            setLocale("en-US" as SupportedLocales);
+        }
+      })
+      .catch(() => {});
+
+
+//Other components.tsx
+
   const lang = useContext(LangContext);
 
   const { i18n } = useTranslation();
